@@ -1,0 +1,558 @@
+/*
+Κάνουμε ενα reset τις ρυθμίσεις του browser για στυλ
+*/
+header,
+footer,
+nav,
+section,
+figure,
+figcaption,
+main,
+h1,
+h2,
+h3,
+ul,
+li,
+body,
+div,
+p,
+img {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font:inherit;
+    vertical-align: baseline;
+    border: 0;
+}
+
+html{
+    font-family:"Manrope",Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    overflow: visible;
+}
+
+/*
+Το overflow visible για να φαινεται το μενου πλοηγησης με την σταθερη θεση πανω απο τα υπολοιπα elements
+*/
+header{
+    font-size: 120%;
+    overflow: visible;
+    position: relative;
+}
+/*
+To στοιχείο περιεκτης του μενου πλοηγησης.Position fixed. Χρειαστηκε μια μεγαλη τιμη στον z index για να είναι ορατο πανω απο οποιαδηποτε αλλα αντικείμενα της σελιδας
+*/
+.container1{
+    display: flex;
+    flex-direction: row;
+    color:white;
+    background-color: rgb(90, 152, 158);
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+}
+/*
+Περιεκτης του λογκο, της μπαρας αναζητησης και των εικονιδιων Λογαριασμου και Καλαθιου
+*/
+#container2{
+    display: flex;
+    flex-direction:row;
+    vertical-align: middle;
+    background-color: cornsilk;
+    height: 200px;
+    width: auto;
+    padding:0%;
+    margin:0%;  
+ }
+ 
+/*
+Τελευταιος περιεκτης στον header, απλη επιδειξη καποιων πληροφοριων
+*/
+#container3{
+    padding: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    background-color: rgba(238, 159, 12, 0.767);
+}
+
+#logo{
+    width:25%;
+    height:100%;
+    top:0;
+    bottom:0;
+    margin:0%;
+}
+/*
+Κανονες στυλ για τους συνδεσμους του μενου πλοηγησης. Σε διαφορα σημεια στην ιστοσελιδα υπαρχουν κι αλλοι συνδεσμοι που δοθηκε και αλλο στυλ
+*/
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover,.hover-menu:hover{
+    background-color: white;
+    color:black;
+    height: 80%;
+}
+
+ul{
+    display: flex;
+    flex-direction:row;
+    list-style: none;
+    text-align: center;
+    text-wrap:nowrap;
+    flex-wrap: nowrap;
+}
+
+
+ul a{
+    height: 100%;
+    padding:5px;
+    width: auto;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+/*
+Κανονες στυλ για το μενου που φαινεται μονο οταν κανει hover ο χρηστης παιζοντας με την ιδιοτητα display
+*/
+.hover-menu{
+    text-align: center;
+    height: 100%;
+    width:10%;
+    background-color: rgb(23, 140, 56);
+    padding:5px;
+}
+
+.hovr-mnu-content{
+    display:none;
+    font-family: "Manrope",Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(90, 152, 158);
+    color:black;
+    align-content: center;
+    position: absolute;
+}
+
+.hover-menu:hover .hovr-mnu-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: bold;
+    width:20%;
+}
+/*
+Ο περιεκτης της μπαρας αναζητησης 
+*/
+.containerSerch{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    font-size:small;
+    height:50%;
+    width:50%;
+    margin-left:20px;
+    margin-top:50px; 
+}
+
+.searchBar{
+    width:100%;
+    height:50%;
+    vertical-align:middle;
+    background: #fff;
+    border-right-style:none;
+    font-size: large;
+    
+}
+
+.searchButton{
+    width:5%;
+    height:50%;
+    left:0;
+    background-color: lightblue;
+    
+}
+
+.mobileMenu{
+    display: none;
+}
+
+/*
+Ο περιεκτης του κυριως περιεχομενου της σελιδας 
+*/
+.container4{
+    display:grid;
+    grid-template-columns: 1fr 4fr;
+}
+/*
+Στο κυριως περιεχομενο, περιεκτης της φορμας για το newsletter
+*/
+.newsletter{
+    margin:20px;
+    padding:5px;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items:normal;
+    border-style:inset;
+    border-radius: 12px;
+}
+
+
+.newsletter>legend{
+    font-family: "Sofia",Verdana, Geneva, Tahoma, sans-serif;
+    font-size:x-large;
+    margin: 10px;
+    padding:5px;
+}
+
+.newsletter input{
+    border-style: solid;
+    border-radius: 12px;
+    width:80%;
+    margin:20px;
+    padding:5px;
+}
+
+#newsbutton{
+    background-color: cadetblue;
+    font-family: Arial, Helvetica, sans-serif;
+    border: black 1px solid;
+    border-radius: 5px;
+    margin:5px;
+    padding:5px;
+    align-self: center;
+}
+/*
+Μεσα στο κυριως περιεχομενο ο περιεκτης των προιοντων με εκπτωση
+*/
+.material{
+    display: grid;
+    grid-template: auto auto auto;
+    padding: 10px;
+    gap: 15px;
+    background-color: #e6e8bda7;
+
+}
+/*
+H κεφαλιδα για να απεικονιστει οπως θελουμε ξεκιναει απο την πρωτη στηλη και τελειωνει στην τεταρτη
+*/
+#salestitle{
+    grid-column:1/4;
+    font-size:xx-large;
+    font-family: "Sofia",Verdana, Geneva, Tahoma, sans-serif;
+    justify-self: center;
+    align-self: center;
+}
+
+.material figure img{
+    width: 150px;
+    align-self: center;
+}
+
+.material figure button{
+    width: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+    justify-self: flex-end;
+    align-self:center;
+    background-color: rgb(201, 208, 206);
+    border: #dee0e1 solid 2px;
+    border-radius: 12px;
+    cursor:grab;
+}
+
+.material figure{
+    background-color: white;
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    transition: all 1s ;
+}
+
+.material figcaption {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.material figure:hover {
+    background-color: #343738;
+    color: white;
+    cursor: pointer;
+    box-shadow: 10px 10px 32px -4px rgba(0, 0, 0, 0.75);
+    transform: scale(1.25);
+    transition: all 1s;
+}
+/*
+Επομενο τμημα στο κυριως περιεχομενο οπου φαινονται τα brands
+*/
+.container5{
+    display: grid;
+    grid-template:auto auto auto auto;
+    justify-content: space-around;
+    overflow: visible;
+}
+
+.container5>h1{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+    color: #888985;
+    grid-column: 1/5;
+    justify-self: center;
+    align-self: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.container5 figure{
+    display: block;
+    justify-content: center;
+    align-content: center;
+    position:relative;
+}
+
+.container5 figure img{
+    width: 100%;
+    height: 100%;  
+}
+/*
+Οταν ο χρηστης κανει hover πανω σε καθε εικονα με brand η εικονα θα μεγεθυνεται γιατι γινεται transform στο μεγεθος αλλα και θα φαινεται και 
+το figcaption γιατι γινεται transition στο opacity
+*/
+.container5 figcaption{
+    border: 1px black;
+    text-align: center;
+    background-color: rgb(206, 62, 185);
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+    bottom: 0;
+    left:0;
+    right:0;
+    position: absolute;
+    object-fit: cover;
+    opacity:0;
+    transition: opacity 1s;  
+}
+
+.container5 figure:hover figcaption{
+    opacity:1;
+    transition: opacity 1s;
+}
+
+.container5 figure:hover{
+    transform: scale(1.10);
+}
+/*
+Συνδεσμος που θα πηγαινε σε σελιδα με ολα τα brands
+*/
+.brandbtn{
+    border: 1px black;
+    background-color: rgb(4, 127, 86);
+    border-radius: 12px;
+    align-self:center;
+    justify-self:center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    text-align: center;
+    grid-column: 1/5;
+    padding: 10px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.brandbtn:hover{
+    border: 1px black;
+    background-color: rgb(218, 84, 66);
+    border-radius: 12px;
+    align-self:center;
+    justify-self:center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    text-align: center;
+    grid-column: 1/5;
+    padding: 10px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 15%;
+}
+/*
+Συνδεσμος με σταθερη θεση στην κατω δεξια γωνια για να οδηγει οποιαδηποτε στιγμη στην αρχη της σελιδας
+*/
+#HomeBtn{
+    position:fixed;
+    top:650px;
+    left:1400px;
+    background-color: #343738;
+    width:3%;
+    height:6%;
+    border: solid 1px black;
+    border-radius: 5px;
+    font-size:270%;
+    font-weight: bolder;
+    text-align: center;
+}
+/*
+Υποσελιδο που περιεχει τρεις στηλες με τα περιεχομενα τους
+λογκο,πληροφοριες και συνδεσμους. Ενας εξ αυτων το Φορμα ενδιαφεροντος που οδηγει στην αλλη σελιδα
+*/
+footer{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 20px;
+    row-gap: 20px;
+    background-color: #888985;
+    font-family: "Manrope",Verdana, Geneva, Tahoma, sans-serif;
+}
+
+footer section{
+    display: flex;
+    flex-direction: column;
+    margin:5%;
+}
+
+footer h2{
+    text-decoration: underline;
+    font-size: larger;
+}
+
+footer section p{
+    font-size: medium;
+    justify-self:left ;
+    align-self:auto;
+    color:black;
+    opacity: 0.7;
+}
+/*
+Το label>a αναφερεται στην δευτερη σελιδα οπου ηθελα δυο λεξεις στην ετικετα ενος input 
+να είναι συνδεσμος με αυτο το στυλ που θα οδηγουσε σε μια αλλη σελιδα (βλ. Πολιτικη Απορρητου)
+*/
+footer section a,label>a{
+    color: black;
+    opacity: 0.7;
+}
+
+footer section a:hover,p:hover,label>a:hover{
+    height:auto;
+    opacity:1;
+    background: none;
+}
+
+footer p{
+    grid-column: 1/4;
+    justify-self: center;
+    margin-bottom: 5%;
+}
+
+/*
+Περιεκτης του κυριως περιεχομενου της δευτερης σελιδας. Απο εδω και κατω αφορα στυλ στα αντικειμενα
+του κυριως περιεχομενου της δευτερης σελιδας αφου ο χεντερ και ο φουτερ ειναι κοινα
+*/
+#container6{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    column-gap: 5px;
+}
+
+#container6 form{
+    grid-column: 1/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 1px black inset;
+    border-radius: 5px;
+    margin:5%;
+}
+
+#container6 form h1{
+    font-family: "Manrope",Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+    font-weight: bold;
+    margin: 2%;
+    padding: 2%;
+}
+
+#container6 input{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-style:solid;
+    opacity: 0.7;
+    border-radius: 2px;
+    width: 80%;
+    height:40px;
+    margin:2%;
+}
+
+#container6 #mhnuma{
+    height:80px;
+}
+/*
+Συνδεσμος με σταθερη θεση στην δευτερη σελιδα, διπλα απο τον συνδεσμο που σε στελνει στην αρχη της σελιδας,
+με τν διαφορα οτι σε παει στην Home Page
+*/
+#MainHomeBtn{
+    position:fixed;
+    top:650px;
+    left:1300px;
+    background-color: #80949b;
+    width:3%;
+    height:6%;
+    border: solid 1px black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#MainHomeBtn span{
+    text-align: center;
+    font-size: 210%;
+}
+/*
+Στυλ για το input που ο χρηστης συμφωνει με τους ορους απορρητου
+*/
+#checkcontainer{
+    display: flex;
+    flex-direction: row;
+}
+#checkcontainer #check,#checkcontainer #labelcheck{
+    display: inline;
+    width: auto;
+    height: auto;
+}
+/*
+Στυλ για τον πινακα
+*/
+table,th,tr,td{
+    border-color: #343738;
+    border-style: solid;
+    border-collapse: collapse;
+    border-radius: 5px;
+}
+
+table{
+    grid-column: 4/5;
+    margin:5%;
+}
+
+th{
+    height:40px;
+}
+
+td{
+    width:auto;
+    height: auto;
+    text-align: left;
+    vertical-align: bottom;
+}
+
+th,td{
+    padding:5px;
+}
+
+#materialMobile,.container5Mobile,#footerMobile{
+    display: none;
+}
